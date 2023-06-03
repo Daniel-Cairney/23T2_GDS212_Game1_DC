@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 4829993156355103155}
   - component: {fileID: 6874010901907759371}
   - component: {fileID: 4111428030294322193}
-  - component: {fileID: 3992710596145104394}
   m_Layer: 5
   m_Name: HPrepresentative
   m_TagString: Untagged
@@ -153,20 +152,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3992710596145104394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3238216684440292788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d36b456f5f1534f8b0110b35583c7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentHeath: 0
-  MaxHeath: 100
 --- !u!1 &8636870012068736638
 GameObject:
   m_ObjectHideFlags: 0

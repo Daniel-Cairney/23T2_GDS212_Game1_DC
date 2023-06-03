@@ -22,7 +22,7 @@ namespace DanielCairney
 
         private void Update()
         {
-            CurrentHeath = Player.Health;
+            //CurrentHeath = Player.Health;
             HeathBar.fillAmount= CurrentHeath / MaxHeath;
         }
     }

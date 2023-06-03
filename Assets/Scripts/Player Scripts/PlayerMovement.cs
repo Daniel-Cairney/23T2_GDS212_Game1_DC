@@ -6,8 +6,8 @@ namespace DanielCairney
 {
     public class PlayerMovement : MonoBehaviour
     {
-        [Header("Player Health")]
-        public float Health = 100f;
+        //[Header("Player Health")]
+        //public float Health = 100f;
 
         [Header("Movement")]
         public float moveSpeed;
