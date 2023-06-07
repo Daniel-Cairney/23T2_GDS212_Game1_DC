@@ -12,6 +12,7 @@ namespace DanielCairney
         public float healthDecreaseRate = 10f;
         public float healthIncreaseRate = 10f;
         public Image healthBar;
+        public Image visibilityImage;
 
         private float currentHealth;
         private bool isInsideTriggerZone;
@@ -28,11 +29,13 @@ namespace DanielCairney
             {
                 // Health decrease over time
                 DecreaseHealth(healthDecreaseRate * Time.deltaTime);
+                UpdateVisibilityImageAlpha();
             }
             else
             {
                 // Health increase over time
                 IncreaseHealth(healthIncreaseRate * Time.deltaTime);
+                UpdateVisibilityImageAlpha();
             }
         }
 
@@ -120,6 +123,13 @@ namespace DanielCairney
         {
             // Update the fill amount of the health bar image
             healthBar.fillAmount = currentHealth / maxHealth;
+        }
+
+        private void UpdateVisibilityImageAlpha()
+        {
+            // Update the alpha value of the visibility image based on health changes
+            float alpha = 1f - (currentHealth / maxHealth); // Inverse relation to health
+            visibilityImage.color = new Color(visibilityImage.color.r, visibilityImage.color.g, visibilityImage.color.b, alpha);
         }
 
         private void Die()
