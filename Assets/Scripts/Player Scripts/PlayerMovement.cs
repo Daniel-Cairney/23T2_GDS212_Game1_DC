@@ -34,7 +34,6 @@ namespace DanielCairney
 
         Vector3 moveDirection;
 
-
         Rigidbody rb;
 
         private void Start()
@@ -87,7 +86,8 @@ namespace DanielCairney
             //on ground
             if(grounded)
                 rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-
+                
+         
             //in air
             else if(!grounded)
                 rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);

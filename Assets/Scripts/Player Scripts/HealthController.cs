@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace DanielCairney
 {
@@ -13,6 +14,10 @@ namespace DanielCairney
         public float healthIncreaseRate = 10f;
         public Image healthBar;
         public Image visibilityImage;
+        public AudioSource whispers;
+        //public float minVolume = 0f;
+        //public float maxVolume = 1f;
+        
 
         private float currentHealth;
         private bool isInsideTriggerZone;
@@ -30,12 +35,16 @@ namespace DanielCairney
                 // Health decrease over time
                 DecreaseHealth(healthDecreaseRate * Time.deltaTime);
                 UpdateVisibilityImageAlpha();
+                WhispersEffect();
+                
             }
             else
             {
                 // Health increase over time
                 IncreaseHealth(healthIncreaseRate * Time.deltaTime);
                 UpdateVisibilityImageAlpha();
+                WhispersEffect();
+               
             }
         }
 
@@ -132,11 +141,19 @@ namespace DanielCairney
             visibilityImage.color = new Color(visibilityImage.color.r, visibilityImage.color.g, visibilityImage.color.b, alpha);
         }
 
+       private void WhispersEffect()
+        {
+            float volume = 1f - (currentHealth / maxHealth);
+           whispers.volume = volume;
+        }
+
         private void Die()
         {
             // Handle player death, such as respawning or game over
+            SceneManager.LoadScene("DeathScreen");
             Debug.Log("Player died!");
         }
+
     }
 
 
